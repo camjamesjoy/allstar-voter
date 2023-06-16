@@ -1,0 +1,15 @@
+{
+  "dependencies": {
+    "chromedriver": "^114.0.2",
+    "selenium-webdriver": "^4.10.0"
+  },
+  "name": "selenium-allstar",
+  "version": "1.0.0",
+  "description": "automation to submit all start votes",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "",
+  "license": "ISC"
+}
