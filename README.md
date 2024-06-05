@@ -7,10 +7,6 @@ User also needs to create a `.personalInfo.json` file and update the path in vot
 to point to the created file. Lastly, the user needs to update the list in vote.js with
 the players they want to vote for.
 
-# todo 
-
-give example json
-
 ## Usage
 
 - [install node](https://nodejs.org)
