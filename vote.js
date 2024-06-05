@@ -48,7 +48,7 @@ async function test_case() {
         let positionXML = writeInPositionXML[position];
         try {
             // first try to click on the player
-            var clickNameElement = await driver.wait(until.elementLocated(By.xpath('//*[contains(text(), "' + shortPlayerName + '")]//ancestor::button')), 5000);
+            var clickNameElement = await driver.wait(until.elementLocated(By.xpath('//*[contains(text(), "' + shortPlayerName + '")]//ancestor::button')), 1000);
             retries = 5;
             while (retries > 0) {
                 try {
@@ -63,11 +63,11 @@ async function test_case() {
         } catch (TimeoutError) {
             // Write in player name if not found
             try {
-                var writeInElement = await driver.wait(until.elementLocated(By.xpath(positionXML)), 5000);
+                var writeInElement = await driver.wait(until.elementLocated(By.xpath(positionXML)), 1000);
                 await writeInElement.click();
-                enterNameElement = await driver.wait(until.elementLocated(By.xpath(writeInNamePopUpXML)), 5000);
+                enterNameElement = await driver.wait(until.elementLocated(By.xpath(writeInNamePopUpXML)), 1000);
                 await enterNameElement.sendKeys(playerName)
-                var playerNameElement = await driver.wait(until.elementLocated(By.xpath(clickNamePopUpXML)), 5000);
+                var playerNameElement = await driver.wait(until.elementLocated(By.xpath(clickNamePopUpXML)), 1000);
                 await playerNameElement.click();
             } catch (Error) {
                 console.log("Could not find player " + playerName);
@@ -76,7 +76,7 @@ async function test_case() {
         console.log("Voted for " + playerName);
     }
 
-    var reviewButton = await driver.wait(until.elementLocated(By.xpath('//*[text()="Review Picks"]')), 5000);
+    var reviewButton = await driver.wait(until.elementLocated(By.xpath('//*[text()="Review Picks"]')), 1000);
     await reviewButton.click();
     await fillUserData(driver);
 }
